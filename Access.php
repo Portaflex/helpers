@@ -1,6 +1,6 @@
 <?php
 
-namespace dslibs\helpers;
+namespace helpers;
 
 use yii\helpers\Html;
 use yii\helpers\Url;
