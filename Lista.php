@@ -1,6 +1,6 @@
 <?php
 
-namespace dslibs\helpers;
+namespace helpers;
 
 use yii\db\Query;
 use yii\helpers\ArrayHelper;
