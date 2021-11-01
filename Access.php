@@ -158,6 +158,7 @@ class Access
 			{
 				foreach ($v as $u)
 				{
+					$f = [];
 					$f[] = $usuario[$u];
 				}
 				Yii::$app->session[$k] = implode(' ', $f);
