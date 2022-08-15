@@ -58,6 +58,7 @@ class Menus
         return $out;
     }
     
+    // Function to generate nav.
     function genNav ()
     {
         //$mPrincipal = Menu::findAll(['m_ident' => 'menu_principal']);
