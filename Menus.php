@@ -4,7 +4,7 @@ namespace helpers;
 
 use yii\db\Query;
 use yii\helpers\Url;
-use yii\bootstrap4\nav;
+use yii\bootstrap4\Nav;
 
 class Menus
 {
