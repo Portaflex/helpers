@@ -4,6 +4,7 @@ namespace helpers;
 
 use yii\db\Query;
 use yii\helpers\Url;
+use 
 
 class Menus
 {
@@ -55,5 +56,20 @@ class Menus
         }
         $out .= "</ul>" . "\n";
         return $out;
+    }
+    
+    function genNav ()
+    {
+        $mPrincipal = Menu::findAll(['m_ident' => 'menu_principal']);
+        $items = [];
+        foreach ($mPrincipal as $k)
+        {
+            $items[] = ['label' => $k->m_texto, 'url' => $k->m_url];
+        }
+
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav'],
+            'items' => $items
+        ]);
     }
 }
