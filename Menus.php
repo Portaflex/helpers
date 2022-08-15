@@ -4,7 +4,7 @@ namespace helpers;
 
 use yii\db\Query;
 use yii\helpers\Url;
-use 
+use yii\bootstrap4\nav;
 
 class Menus
 {
@@ -60,7 +60,9 @@ class Menus
     
     function genNav ()
     {
-        $mPrincipal = Menu::findAll(['m_ident' => 'menu_principal']);
+        //$mPrincipal = Menu::findAll(['m_ident' => 'menu_principal']);
+        $mPrincipal = new Query();
+        $mPrincipal->select('*')->from('menu')->where(['m_ident' => 'menu_principal'])->all();
         $items = [];
         foreach ($mPrincipal as $k)
         {
