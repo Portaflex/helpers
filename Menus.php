@@ -67,7 +67,7 @@ class Menus
         $items = [];
         foreach ($mPrincipal as $k)
         {
-            $items[] = ['label' => $k->m_texto, 'url' => $k->m_url];
+            $items[] = ['label' => $k['m_texto'], 'url' => $k['m_url']];
         }
 
         echo Nav::widget([
