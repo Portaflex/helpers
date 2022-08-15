@@ -59,7 +59,7 @@ class Menus
     }
     
     // Function to generate nav.
-    function genNav ()
+    function genNavPrincipal ()
     {
         //$mPrincipal = Menu::findAll(['m_ident' => 'menu_principal']);
         $mPrincipal = new Query();
