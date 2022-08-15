@@ -62,8 +62,7 @@ class Menus
     public static function genNavPrincipal ()
     {
         //$mPrincipal = Menu::findAll(['m_ident' => 'menu_principal']);
-        $mPrincipal = new Query();
-        $mPrincipal->select('*')->from('menu')->where(['m_ident' => 'menu_principal'])->all();
+        $mPrincipal = (new Query())->select('*')->from('menu')->where(['m_ident' => 'menu_principal'])->all();
         $items = [];
         foreach ($mPrincipal as $k)
         {
