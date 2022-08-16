@@ -108,11 +108,11 @@ class Camp
 	// Funciones de Botones.
 	//-------------------------------------------------------------------------
 
-	public static function botonesNormal ($url, $id = false)
+	public static function botonesNormal ($url, $id = false, $index = false)
 	{
 		$out = "<br>". self::botonSave().' ';
 		if ($id) $out .= self::botonDelete().' ';
-		$out .= self::botonReturn($url).' ';
+		$out .= self::botonReturn($index).' ';
 		return Html::tag('h3', $out)."<br> \n";
 	}
 
