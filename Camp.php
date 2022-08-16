@@ -137,18 +137,19 @@ class Camp
 
 	public static function botonSave ()
 	{
-		return Html::submitButton('Guardar', ['class' => 'btn btn-sm btn-outline-primary', 'name' => 'action', 'value' => 'save'])."\n";
+		return Html::submitButton('Guardar', ['class' => 'btn btn-sm btn-primary',
+                    'name' => 'action', 'value' => 'save'])."\n";
 	}
 
 	public static function botonDelete ()
 	{
-		return Html::submitButton('Eliminar', ['class' => 'btn btn-sm btn-outline-danger', 'name' => 'action',  'value' => 'delete',
+		return Html::submitButton('Eliminar', ['class' => 'btn btn-sm btn-danger', 'name' => 'action',  'value' => 'delete',
 				'onclick' => "return confirm('Desea eliminar permanentemente este registro?')"])."\n";
 	}
 
 	public static function botonReturn ($url, $nombre = 'Volver')
 	{
-		return Html::a($nombre, $url , ['class' => 'btn btn-sm btn-outline-secondary']);
+		return Html::a($nombre, $url , ['class' => 'btn btn-sm btn-secondary']);
 	}
 
 	public static function botonAjax ($name, $function, $url, $options = false)
