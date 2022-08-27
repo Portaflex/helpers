@@ -78,7 +78,7 @@ class Arbol
 		if (! empty ($config['titulo'])) {
                     $this->out = '<h3><a href='.Url::to($config['ref']).'>'.$t."</a></h3>";
                 }
-                $this->out .= Html::a($t, [$config['ref_insert'], 'parent' => $raiz], 
+                $this->out .= Html::a($t, [$config['ref_insert'], $config['parent'] => $raiz], 
                         ['class' => 'btn btn-sm-success']);
 		$this->out .= "<div style='column-count:auto; column-width:20em;'>";
 		$this->createTreeView($items, $raiz, $config);
@@ -92,7 +92,7 @@ class Arbol
 		{
 			if ($raiz == $item[$config['parent']])
 			{
-				$link = $item[$config['id_link']] ?? $item[$config['id']];
+                            $link = $item[$config['id_link']] ?? $item[$config['id']];
 			    $id_link = "<li><a href='".Url::to($config['ref_edit']."?". $config['id']."=".$item[$config['id']]).
 				"'><b>".$link.'</b> - </a>';
 
