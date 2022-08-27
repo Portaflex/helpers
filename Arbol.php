@@ -5,6 +5,52 @@ namespace helpers;
 use yii\db\Query;
 use yii\helpers\Url;
 
+//    Este es un helper para generar una vista de arbol.
+//    El siguiente es un ejemplo de configuración.
+//
+//    Se instancia y genera: (new Arbol)->genArbol($raiz, $config);
+//
+//    Los parámetros de configuración es un array con campos de la
+//    db y urls. Se pueden generar con una función o directamente 
+//    en la variable $config. El siguiente es un ejemplo para generar
+//    un arbol con la tabla menu. Que, por cierto, es la estructura
+//    para la que está pensado este helper.
+//
+//    private function arbolMenu()
+//        {
+//            $config = [
+//                'tabla' => 'menu',
+//                'id' => 'm_id',
+//                'parent' => 'm_parent',
+//                'ref' => '/admin/menu',
+//                'ref_insert' => '/admin/menu/edit',
+//                'ref_edit' => '/admin/menu/edit',
+//                'nombre' => 'm_texto',
+//                // 'order' => 'm_valor',
+//                'titulo' => 'Gestor de Menús',
+//                'nuevo' => 'Nuevo menu raíz',
+//                // 'dropdown' => 'm_ident',
+//                'id_link' => 'm_valor'
+//            ];
+//
+//            return $config;
+//        }
+
+//    TABLE public.menu (
+//    m_id integer NOT NULL,
+//    m_parent integer,
+//    m_ident character varying(200),
+//    m_grupo character varying(45),
+//    m_orden integer,
+//    m_texto character varying(255),
+//    m_url character varying(255),
+//    m_valor integer,
+//    m_curl character varying(255)
+//    );
+
+//    ALTER TABLE ONLY public.menu
+//    ADD CONSTRAINT menu_pkey PRIMARY KEY (m_id);
+
 class Arbol
 {
 	public function genArbol($raiz, $config = [])
