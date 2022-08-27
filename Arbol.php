@@ -4,6 +4,7 @@ namespace helpers;
 
 use yii\db\Query;
 use yii\helpers\Url;
+use yii\bootstrap4\Html;
 
 //    Este es un helper para generar una vista de arbol.
 //    El siguiente es un ejemplo de configuración.
