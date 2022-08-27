@@ -76,10 +76,10 @@ class Arbol
 		$t = isset($config['titulo']) ? $config['titulo'] : FALSE;
 		$n = isset($config['nuevo']) ? $config['nuevo'] : '';
 		if (! empty ($config['titulo'])) {
-                    $this->out = '<h3><a href='.Url::to($config['ref']).'>'.$t."</a></h3>";
+                    $this->out = Html::tag ('h3', $t);
                 }
-                $this->out .= Html::a($t, [$config['ref_insert'], $config['parent'] => $raiz], 
-                        ['class' => 'btn btn-sm-success']);
+                $this->out .= Html::a($n, [$config['ref_insert'], $config['parent'] => $raiz], 
+                        ['class' => 'btn btn-success']);
 		$this->out .= "<div style='column-count:auto; column-width:20em;'>";
 		$this->createTreeView($items, $raiz, $config);
 		$this->out .= "</div>";
@@ -93,20 +93,21 @@ class Arbol
 			if ($raiz == $item[$config['parent']])
 			{
                             $link = $item[$config['id_link']] ?? $item[$config['id']];
+                            $id_link = Html::tag('li', Html::a($link, [$config['ref_edit'], $config['id'] => $item[$config['id']]]));
 			    $id_link = "<li><a href='".Url::to($config['ref_edit']."?". $config['id']."=".$item[$config['id']]).
 				"'><b>".$link.'</b> - </a>';
 
-				if ($CL > $PL) $this->out .= "<ul>"."\n";
-				if ($CL == $PL) $this->out .= "</li>"."\n";
+                            if ($CL > $PL) $this->out .= "<ul>"."\n";
+                            if ($CL == $PL) $this->out .= "</li>"."\n";
 
-				$this->out .= $id_link."<a href='".Url::to($config['ref_insert'])."?parent=".
-						$item[$config['id']]."'>".$item[$config['nombre']]."</a>";
+                            $this->out .= $id_link . Html::a($item[$config['nombre']], [$config['ref_insert'],
+                                $config['parent'] => $item[$config['id']]]);
 
-						if ($CL > $PL) $PL = $CL;
+                            if ($CL > $PL) $PL = $CL;
 
-						$CL++;
-						$this->createTreeView ($items, $item[$config['id']], $config, $CL, $PL);
-						$CL--;
+                            $CL++;
+                            $this->createTreeView ($items, $item[$config['id']], $config, $CL, $PL);
+                            $CL--;
 			}
 		}
 		if ($CL == $PL)
