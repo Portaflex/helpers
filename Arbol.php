@@ -93,7 +93,7 @@ class Arbol
 			if ($raiz == $item[$config['parent']])
 			{
 				$link = $item[$config['id_link']] ?? $item[$config['id']];
-			    $id_link = "<li><a href='".Url::to($config['ref_edit']."?id=".$item[$config['id']]).
+			    $id_link = "<li><a href='".Url::to($config['ref_edit']."?". $config['id']."=".$item[$config['id']]).
 				"'><b>".$link.'</b> - </a>';
 
 				if ($CL > $PL) $this->out .= "<ul>"."\n";
