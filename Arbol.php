@@ -80,7 +80,6 @@ class Arbol
                 }
                 $this->out .= Html::a($t, [$config['ref_insert'], 'parent' => $raiz], 
                         ['class' => 'btn btn-sm-success']);
-				//<b><a href='".Url::to($config['ref_insert'].'?parent='.$raiz)."'>".$n.'</a></b>';
 		$this->out .= "<div style='column-count:auto; column-width:20em;'>";
 		$this->createTreeView($items, $raiz, $config);
 		$this->out .= "</div>";
