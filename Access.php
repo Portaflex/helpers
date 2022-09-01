@@ -17,6 +17,32 @@ class Access
 	private $tablaSesion = 'session';
 	private $datosSesion;
 	private $campoEstado;
+        
+        /** 
+         * Los parámetros que se pasan a la clase Access y que son campos de
+         * la DB y variables de sesión son:
+        $params = [
+        'tablaUsuario' => 'usuario',
+        'tablaSesion' => 'session',  ---> porque la sesión se guarda en la DB
+        'campoLogin' => 'user_login',
+        'campoPw' => 'user_pw',
+        'campoRol' => 'userRol',
+        'campoActivo' => 'user_activo',
+        'datosSesion' => [
+            'userId' => 'user_id',
+            'userRol' => 'user_group',
+            'userLogin' => 'user_login',
+            'usuario' => [
+                'user_nom',
+                'user_apell1',
+                'user_apell2'],
+            'userNcol' => 'user_ncol',
+            'userEspec' => 'user_espec',
+            'userEmail' => 'user_email',
+            'userRecibe' => 'user_recibe',
+            'autorId' => 'user_id',
+            'userEmailPortal' => 'user_email_portal'],
+        ]; **/
 
 	public function __construct ($params = false)
 	{
