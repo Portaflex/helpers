@@ -79,7 +79,7 @@ class Arbol
                     $this->out = Html::tag ('h3', $t);
                 }
                 $this->out .= Html::a($n, [$config['ref_insert'], $config['parent'] => $raiz], 
-                        ['class' => 'btn btn-success']);
+                        ['class' => 'btn btn-success btn-xs']);
 		$this->out .= "<div style='column-count:auto; column-width:20em;'>";
 		$this->createTreeView($items, $raiz, $config);
 		$this->out .= "</div>";
