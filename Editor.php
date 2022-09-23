@@ -23,6 +23,8 @@ class Editor extends InputWidget
         } else {
             $out = Html::textarea($this->name, $this->value, $this->options);
         }
+        echo $out;
+        
         $this->registerPlugin();
   }
   
@@ -36,7 +38,7 @@ class Editor extends InputWidget
         KCAsset::register($view);
       
         $js[] = "<script>CKEDITOR.replace('#$id');</script>";
-	$js[] = '<script>CKEDITOR.dtd.$removeEmpty["span"] = false;</script>';
+	//$js[] = '<script>CKEDITOR.dtd.$removeEmpty["span"] = false;</script>';
         
         $view->registerJs(implode("\n", $js));
   }
