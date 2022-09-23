@@ -11,7 +11,9 @@
 		"npm-asset/bootstrap" : "~4.0",
 		"yiisoft/yii2-bootstrap4" : "~2.0.",
 		"cinghie/yii2-cookie-consent" : "~1.5",
-		"mpdf/mpdf" : "~8.0"
+		"mpdf/mpdf" : "~8.0",
+        	"ckeditor/ckeditor": "^4.7 || dev-full/4.11.x",
+        	"sunhater/kcfinder": "*"
 	},
 	"autoload" : {
 		"psr-4" : {
