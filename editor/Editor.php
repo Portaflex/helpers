@@ -21,5 +21,9 @@ class Editor extends InputWidget
   public function registerAssets()
   {
       $view = $this->getView();
+      $id = $this->options['id'];
+      
+      $out .= "<script>CKEDITOR.replace(".$op['id'].", {toolbar: '$preset', height: $height, width: '$width'})</script>"."\n";
+	    $out .= '<script>CKEDITOR.dtd.$removeEmpty["span"] = false;</script>';
   }
 }
