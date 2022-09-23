@@ -39,7 +39,6 @@ class Editor extends InputWidget
         
         EditorAsset::register($view);
         KCAsset::register($view);
-        ConfigAsset::register($view);
       
         $js[] = "CKEDITOR.editorConfig = function(config) {
                     config.language = 'es';
