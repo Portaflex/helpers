@@ -6,10 +6,9 @@ use yii\web\AssetBundle;
 
 class EditorAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/ckeditor/ckeditor/';
+    //public $sourcePath = '@vendor/ckeditor/ckeditor/';
     public $js = [
-        'ckeditor.js',
-        'adapters/jquery.js',
+        'config_editor.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

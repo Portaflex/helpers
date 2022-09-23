@@ -15,7 +15,7 @@ class Editor extends InputWidget
   public function init()
   {
         parent::init(); 
-        $this->config['customConfig'] = 'config.js';
+        $this->config['customConfig'] = 'config_editor.js';
         $this->config['toolbar'] = 'Consulta';
   }
   
@@ -40,6 +40,7 @@ class Editor extends InputWidget
         
         EditorAsset::register($view);
         KCAsset::register($view);
+        ConfigAsset::register($view);
       
         $js[] = "CKEDITOR.replace('$id', $config);";
 	$js[] = 'CKEDITOR.dtd.$removeEmpty["span"] = false;';
