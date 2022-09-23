@@ -37,7 +37,7 @@ class Editor extends InputWidget
         EditorAsset::register($view);
         KCAsset::register($view);
       
-        $js[] = "CKEDITOR.replace('#$id');";
+        $js[] = "CKEDITOR.replace('$id');";
 	$js[] = 'CKEDITOR.dtd.$removeEmpty["span"] = false;';
         
         $view->registerJs(implode("\n", $js));
