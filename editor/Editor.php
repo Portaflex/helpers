@@ -10,7 +10,7 @@ class Editor extends InputWidget
   
   public function init()
   {
-    parent::init(); 
+      parent::init(); 
   }
   
   public function run()
@@ -20,6 +20,6 @@ class Editor extends InputWidget
   
   public function registerAssets()
   {
-    
+      $view = $this->getView();
   }
 }
