@@ -1,6 +1,8 @@
 <?php
 
-namespace helpers\editor;
+namespace helpers;
+
+use yii\web\AssetBundle;
 
 class EditorAsset extends AssetBundle
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace helpers\editor;
+namespace helpers;
 
 class Editor extends InputWidget
 {
@@ -10,20 +10,30 @@ class Editor extends InputWidget
   
   public function init()
   {
-      parent::init(); 
+        parent::init(); 
   }
   
   public function run()
   {
-    
+        if ($this->hasModel()) {
+            $out = Html::activeTextarea($this->model, $this->attribute, $this->options);
+        } else {
+            $out = Html::textarea($this->name, $this->value, $this->options);
+        }
+        $this->registerPlugin();
   }
   
-  public function registerAssets()
+  public function registerPlugin()
   {
-      $view = $this->getView();
-      $id = $this->options['id'];
+        $js = [];  
+        $view = $this->getView();
+        $id = $this->options['id'];
+        
+        EditorAsset::register($view);
+        KCAsset::register($view);
       
-      $out .= "<script>CKEDITOR.replace(".$op['id'].", {toolbar: '$preset', height: $height, width: '$width'})</script>"."\n";
-	    $out .= '<script>CKEDITOR.dtd.$removeEmpty["span"] = false;</script>';
+        $js[] = "\n"."<script>CKEDITOR.replace('#$id');</script>"."\n";
+	$js[] = '<script>CKEDITOR.dtd.$removeEmpty["span"] = false;</script>';
+        echo $out;
   }
 }
