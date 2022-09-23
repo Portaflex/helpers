@@ -15,6 +15,8 @@ class Editor extends InputWidget
   public function init()
   {
         parent::init(); 
+        $this->config['customConfig'] = 'config.js';
+        $this->config['toolbar'] = 'Consulta';
   }
   
   public function run()
