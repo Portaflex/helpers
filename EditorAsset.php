@@ -15,4 +15,7 @@ class EditorAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\web\JqueryAsset'
     ];
+    public $jsOptions = [
+        'position' => \yii\web\View::POS_HEAD
+    ];
 }
