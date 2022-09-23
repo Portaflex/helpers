@@ -1,8 +1,9 @@
 <?php
 
-namespace helpers;
+namespace helpers\editor;
 
 use yii\helpers\Html;
+use yii\helpers\Json;
 use yii\widgets\InputWidget;
 
 class Editor extends InputWidget
@@ -33,11 +34,12 @@ class Editor extends InputWidget
         $js = [];  
         $view = $this->getView();
         $id = $this->options['id'];
+        $config = Json::encode($this->config);
         
         EditorAsset::register($view);
         KCAsset::register($view);
       
-        $js[] = "CKEDITOR.replace('$id');";
+        $js[] = "CKEDITOR.replace('$id', $config);";
 	$js[] = 'CKEDITOR.dtd.$removeEmpty["span"] = false;';
         
         $view->registerJs(implode("\n", $js));

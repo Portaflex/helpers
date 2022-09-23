@@ -1,6 +1,6 @@
 <?php
 
-namespace helpers;
+namespace helpers\editor;
 
 use yii\web\AssetBundle;
 
