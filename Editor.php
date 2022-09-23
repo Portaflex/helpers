@@ -2,6 +2,9 @@
 
 namespace helpers;
 
+use yii\helpers\Html;
+use yii\widgets\InputWidget;
+
 class Editor extends InputWidget
 {
   public $preset;
@@ -32,8 +35,9 @@ class Editor extends InputWidget
         EditorAsset::register($view);
         KCAsset::register($view);
       
-        $js[] = "\n"."<script>CKEDITOR.replace('#$id');</script>"."\n";
+        $js[] = "<script>CKEDITOR.replace('#$id');</script>";
 	$js[] = '<script>CKEDITOR.dtd.$removeEmpty["span"] = false;</script>';
-        echo $out;
+        
+        $view->registerJs(implode("\n", $js));
   }
 }
