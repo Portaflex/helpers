@@ -34,7 +34,7 @@ class Editor extends InputWidget
         $js = [];  
         $view = $this->getView();
         $id = $this->options['id'];
-        $config = Json::encode($this->config);
+        $config = $this->config ? Json::encode($this->config) : '{}';
         
         EditorAsset::register($view);
         KCAsset::register($view);
