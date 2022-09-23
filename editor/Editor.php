@@ -17,4 +17,9 @@ class Editor extends InputWidget
   {
     
   }
+  
+  public function registerAssets()
+  {
+    
+  }
 }
