@@ -13,7 +13,10 @@ class Editor extends InputWidget
   public function init()
   {
         parent::init();
-        $this->toolbar = 'Consulta';
+        if ($this->toolbar === null)
+        {
+            $this->toolbar = 'Consulta';
+        }
   }
   
   public function run()
@@ -39,10 +42,8 @@ class Editor extends InputWidget
         KCAsset::register($view);
         ConfigAsset::register($view);
       
-        //$js[] = "require('js/config.js');";
         $js[] = "CKEDITOR.replace('$id', {customConfig:'config_editor.js', toolbar:'$toolbar'});";
-        //$js[] = "CKEDITOR.appendTo('$id', {toolbar:'$toolbar'});";
-	$js[] = 'CKEDITOR.dtd.$removeEmpty["span"] = false;';
+        $js[] = 'CKEDITOR.dtd.$removeEmpty["span"] = false;';
         
         $view->registerJs(implode("\n", $js));
   }
