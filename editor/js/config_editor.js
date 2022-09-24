@@ -5,6 +5,7 @@
 
 CKEDITOR.editorConfig = function( config ) {
 	config.language = 'es';
+        config.skin = "karma";
 //	config.uiColor = '#ffffff';
 //   	config.filebrowserBrowseUrl = '/assets/kcfinder/browse.php?type=files';
 //   	config.filebrowserImageBrowseUrl = '/assets/kcfinder/browse.php?type=images';
