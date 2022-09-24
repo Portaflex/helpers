@@ -6,7 +6,6 @@
 CKEDITOR.editorConfig = function( config ) {
 	config.language = 'es';
         config.skin = 'skin';
-        config.skin_skin = 'kama';
    	config.htmlEncodeOutput = false;
 	config.entities = true;
 	config.allowedContent = true;
