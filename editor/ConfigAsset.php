@@ -8,7 +8,7 @@ class ConfigAsset extends AssetBundle
 {
     public $sourcePath = '@vendor/portaflex/helpers/editor/js/';
     public $js = [
-        'config.js',
+        'config_editor.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
