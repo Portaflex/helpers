@@ -39,7 +39,6 @@ class Editor extends InputWidget
         $toolbar = $this->toolbar;
         
         EditorAsset::register($view);
-        //KCAsset::register($view);
         ConfigAsset::register($view);
       
         $js[] = "CKEDITOR.replace('$id', {customConfig:'config_editor.js', toolbar:'$toolbar'});";
