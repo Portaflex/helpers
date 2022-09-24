@@ -41,7 +41,7 @@ class Editor extends InputWidget
         EditorAsset::register($view);
         ConfigAsset::register($view);
       
-        $js[] = "CKEDITOR.replace('$id', {toolbar:'$toolbar', skin: 'kama'});";
+        $js[] = "CKEDITOR.replace('$id', {customConfig:'config_editor.js', toolbar:'$toolbar'});";
         //$js[] = 'CKEDITOR.dtd.$removeEmpty["span"] = false;';
         
         $view->registerJs(implode("\n", $js));

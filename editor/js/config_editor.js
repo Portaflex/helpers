@@ -5,7 +5,8 @@
 
 CKEDITOR.editorConfig = function( config ) {
 	config.language = 'es';
-        config.skin = 'moono';	
+        config.skin = 'skin';
+        config.skin_skin = 'moono';
    	config.htmlEncodeOutput = false;
 	config.entities = true;
 	config.allowedContent = true;
