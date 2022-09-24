@@ -9,9 +9,9 @@ CKEDITOR.editorConfig = function( config ) {
    	config.filebrowserBrowseUrl = '/browse.php?type=files';
    	config.filebrowserImageBrowseUrl = '/browse.php?type=images';
    	config.filebrowserFlashBrowseUrl = '/browse.php?type=flash';
-   	config.filebrowserUploadUrl = '/kcfinder/upload.php?type=files';
-   	config.filebrowserImageUploadUrl = '/kcfinder/upload.php?type=images';
-   	config.filebrowserFlashUploadUrl = '/kcfinder/upload.php?type=flash';
+   	config.filebrowserUploadUrl = '/upload.php?type=files';
+   	config.filebrowserImageUploadUrl = '/upload.php?type=images';
+   	config.filebrowserFlashUploadUrl = '/upload.php?type=flash';
    	
    	config.htmlEncodeOutput = false;
 	config.entities = true;
