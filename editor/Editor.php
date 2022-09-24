@@ -8,14 +8,12 @@ use yii\widgets\InputWidget;
 
 class Editor extends InputWidget
 {
-  public $preset;
-  
-  public $config = [];
+  public $toolbar;
   
   public function init()
   {
         parent::init();
-        $this->config['toolbar'] = 'DS';
+        $this->toolbar = 'Consulta';
   }
   
   public function run()
@@ -35,15 +33,14 @@ class Editor extends InputWidget
         $js = [];  
         $view = $this->getView();
         $id = $this->options['id'];
-        $toolbar = 'DS';
-        $config = $this->config ? Json::encode($this->config) : '{}';
+        $toolbar = $this->toolbar;
         
         EditorAsset::register($view);
         KCAsset::register($view);
         ConfigAsset::register($view);
       
         //$js[] = "require('js/config.js');";
-        $js[] = "CKEDITOR.replace('$id', {customConfig:'config_editor.js', toolbar:'DS'});";
+        $js[] = "CKEDITOR.replace('$id', {customConfig:'config_editor.js', toolbar:'$toolbar'});";
         //$js[] = "CKEDITOR.appendTo('$id', {toolbar:'$toolbar'});";
 	$js[] = 'CKEDITOR.dtd.$removeEmpty["span"] = false;';
         
