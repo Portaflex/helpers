@@ -6,9 +6,9 @@
 CKEDITOR.editorConfig = function( config ) {
 	config.language = 'es';
 	config.uiColor = '#ffffff';
-   	config.filebrowserBrowseUrl = '/kcfinder/browse.php?type=files';
-   	config.filebrowserImageBrowseUrl = '/kcfinder/browse.php?type=images';
-   	config.filebrowserFlashBrowseUrl = '/kcfinder/browse.php?type=flash';
+   	config.filebrowserBrowseUrl = '/browse.php?type=files';
+   	config.filebrowserImageBrowseUrl = '/browse.php?type=images';
+   	config.filebrowserFlashBrowseUrl = '/browse.php?type=flash';
    	config.filebrowserUploadUrl = '/kcfinder/upload.php?type=files';
    	config.filebrowserImageUploadUrl = '/kcfinder/upload.php?type=images';
    	config.filebrowserFlashUploadUrl = '/kcfinder/upload.php?type=flash';
