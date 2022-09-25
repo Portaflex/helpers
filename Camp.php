@@ -155,7 +155,7 @@ class Camp
 	public static function botonAjax ($name, $function, $url, $options = false)
 	{
 		$id = 'boton_'.rand(0, 1000);
-		$op = ['class' => 'light', 'action' => 'save'];
+		$op = ['class' => 'primary', 'action' => 'save'];
 
 		if ($options)
 		{
