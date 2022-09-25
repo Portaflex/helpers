@@ -118,8 +118,8 @@ class Camp
 
 	public static function botonesAjax ($url, $function)
 	{
-		$out = self::botonAjax('Ok', $function, $url, ['class' => 'btn btn-outline-primary btn-xs']).' '."\n";
-		$out .= self::botonAjax('Del', $function, $url, ['class' => 'btn btn-outline-danger btn-xs', 'action' => 'delete' ])."<br> \n";
+		$out = self::botonAjax('Ok', $function, $url, ['class' => 'btn btn-primary btn-xs']).' '."\n";
+		$out .= self::botonAjax('Del', $function, $url, ['class' => 'btn btn-danger btn-xs', 'action' => 'delete' ])."<br> \n";
 		return $out;
 	}
 
